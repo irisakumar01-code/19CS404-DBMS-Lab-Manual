@@ -38,124 +38,176 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="815" height="180" alt="image" src="https://github.com/user-attachments/assets/f3da6546-9ffe-4033-aad3-e8d35e0718a8" />
 
-```sql
--- Paste your SQL code below for Question 1
-```
+~~~
+select PatientID, count(*)  as TotalMedications from Prescriptions group by PatientID;
+~~~
 
 **Output:**
 
-![Output1](output.png)
+<img width="762" height="782" alt="image" src="https://github.com/user-attachments/assets/4ed408d6-1a8e-4b28-a851-b83d6e912d11" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+~~~
+Write a SQL query to find the total number of unique cities in the customer table?
 
-```sql
--- Paste your SQL code below for Question 2
-```
+Table: customer
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+city        TEXT
+email       TEXT
+phone       INTEGER
+~~~
+
+~~~
+select count(distinct city) as unique_cities from customer;
+~~~
 
 **Output:**
 
-![Output2](output.png)
+<img width="612" height="391" alt="image" src="https://github.com/user-attachments/assets/68f6d67b-2cb1-4761-aef3-0eff28a83d2c" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="823" height="201" alt="image" src="https://github.com/user-attachments/assets/d57a9d21-ad63-475c-8c01-899c964dcf1b" />
 
-```sql
--- Paste your SQL code below for Question 3
-```
+~~~
+select Address ,count(*) as TotalPatients from Patients group by Address;
+~~~
 
 **Output:**
+<img width="732" height="448" alt="image" src="https://github.com/user-attachments/assets/9259f916-ae1b-4857-b3e1-b9b9e169c42e" />
 
-![Output3](output.png)
 
 **Question 4**
----
--- Paste Question 4 here
+~~~
+What is the average duration of insurance coverage for patients covered by each insurance company?
 
-```sql
--- Paste your SQL code below for Question 4
-```
+Sample table:Insurance Table
+
+name               type
+-----------------  ----------
+InsuranceID        INTEGER
+PatientID          INTEGER
+InsuranceCompany   TEXT
+PolicyNumber       TEXT
+PolicyHolder       TEXT
+StartDate          DATE
+EndDate            DATE
+~~~
+
+~~~
+select InsuranceCompany,avg(EndDate-StartDate) as AvgCoverageDurationDays from Insurance group by InsuranceCompany;
+~~~
 
 **Output:**
 
-![Output4](output.png)
+<img width="822" height="576" alt="image" src="https://github.com/user-attachments/assets/e864550b-b015-453e-aeaa-b6299301d17f" />
+
 
 **Question 5**
----
--- Paste Question 5 here
+<img width="827" height="236" alt="image" src="https://github.com/user-attachments/assets/bfffdd09-abf8-4d89-8853-b1459649b7e2" />
 
-```sql
--- Paste your SQL code below for Question 5
-```
+~~~
+select count(*) as COUNT from customer where city!='Noida';
+~~~
 
 **Output:**
 
-![Output5](output.png)
+<img width="447" height="387" alt="image" src="https://github.com/user-attachments/assets/42a371ad-9c2b-40cb-b3bd-d251718c16e8" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="797" height="172" alt="image" src="https://github.com/user-attachments/assets/63d5e3b9-16c7-4258-994a-48b680019341" />
 
-```sql
--- Paste your SQL code below for Question 6
-```
+~~~
+select jdate,max(workhour) as "MAX(workhour)" from employee1 group by jdate having max(workhour)>12;
+~~~
 
 **Output:**
+<img width="765" height="463" alt="image" src="https://github.com/user-attachments/assets/8c91ad76-5d02-40f9-803e-3e592e691718" />
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="817" height="187" alt="image" src="https://github.com/user-attachments/assets/f7f9a751-aa04-460e-a507-aea8ded7d284" />
 
-```sql
--- Paste your SQL code below for Question 7
-```
+~~~
+select category_id, sum(price) as Total_Cost from products group by category_id having Total_Cost>50;
+~~~
 
 **Output:**
 
-![Output7](output.png)
+<img width="782" height="437" alt="image" src="https://github.com/user-attachments/assets/e5375105-f15c-4d7c-94ce-65027a88b6ee" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="823" height="172" alt="image" src="https://github.com/user-attachments/assets/2c63054d-8396-4761-9d29-424bdea81aa6" />
 
-```sql
--- Paste your SQL code below for Question 8
-```
+~~~
+select (age/5)*5 as age_group, min(salary) as "MIN(salary)" from customer1 group by (age/5)*5 having min(salary)<2000;
+~~~
 
 **Output:**
 
-![Output8](output.png)
+<img width="770" height="435" alt="image" src="https://github.com/user-attachments/assets/34cac9a9-4d7e-4b98-a414-6818419c77f8" />
+
 
 **Question 9**
----
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
-```
+~~~
+Write a SQL query to find  how many employees work in California?
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
+
+~~~
+
+~~~
+select count(*) as employees_in_california from employee where city='California';
+~~~
 
 **Output:**
 
-![Output9](output.png)
+<img width="751" height="388" alt="image" src="https://github.com/user-attachments/assets/868a5999-6be8-403d-8279-cf065a99caa5" />
+
 
 **Question 10**
----
--- Paste Question 10 here
+~~~
+Write a SQL query to Calculate the average income of the employees with names starting with 'A': 
 
-```sql
--- Paste your SQL code below for Question 10
-```
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
+~~~
+~~~
+select avg(income) as avg_income from employee where name like 'A%';
+~~~
 
 **Output:**
 
-![Output10](output.png)
-
+<img width="541" height="418" alt="image" src="https://github.com/user-attachments/assets/28e8c5bd-d64a-4bbb-8fc2-8e2619b3a973" />
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
